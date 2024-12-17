@@ -1,0 +1,218 @@
+/* Contenedor principal de la sección de proveedores */
+.proveedores-section {
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.proveedores-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.add-provider-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.add-provider-btn i {
+  margin-right: 5px;
+}
+
+.add-provider-btn:hover {
+  background-color: #0056b3;
+}
+
+.provider-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.provider-form {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.provider-form h3 {
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.provider-form .form-group {
+  margin-bottom: 15px;
+}
+
+.provider-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.provider-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.provider-form .form-actions {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.provider-form .form-actions button {
+  margin: 5px;
+}
+
+.provider-form button[type="submit"], .provider-form button[type="button"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.provider-form button[type="submit"] {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.provider-form button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.provider-form button[type="button"] {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.provider-form button[type="button"]:hover {
+  background-color: #e0a800;
+}
+
+.provider-form button i {
+  margin-right: 5px;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar button i {
+  margin-right: 5px;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Tabla de proveedores */
+.providers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.providers-table th, .providers-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.providers-table th {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+}
+
+.providers-table td {
+  color: #333;
+  font-weight: bold;
+}
+
+.providers-table tr:nth-child(even) {
+  background-color: rgba(209, 236, 241, 0.7);
+}
+
+.providers-table tr:hover {
+  background-color: rgba(209, 236, 241, 1);
+}
+
+.providers-table .action-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.providers-table .action-buttons button {
+  margin: 5px;
+}
+
+.providers-table button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.providers-table button:hover {
+  background-color: #0056b3;
+}
+
+.providers-table button i {
+  margin-right: 5px;
+}

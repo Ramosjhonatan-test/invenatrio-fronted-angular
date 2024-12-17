@@ -1,0 +1,60 @@
+.sales-page {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .sales-container {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .sales-table th, .sales-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: #f9f9f9;
+  }
+  
+  .sales-table th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .sales-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .sales-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .invoice-preview {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  

@@ -1,0 +1,39 @@
+<div class="reportes">
+    <div class="reportes-header">
+      <h1>Panel de Reportes</h1>
+    </div>
+    
+    <!-- Sección de contenido principal -->
+    <div class="main-content">
+      <div class="charts-and-summary">
+        <!-- Sección de resumen centrada -->
+        <div class="summary-section">
+          <div class="summary-cards">
+            <div class="card">
+              <h4><i class="fa fa-shopping-cart"></i> Total de Ventas</h4>
+              <p>{{ totalVentas }}</p>
+            </div>
+            <div class="card">
+              <h4><i class="fa fa-dollar-sign"></i> Total de Ingresos</h4>
+              <p>{{ totalIngresos }}</p>
+            </div>
+          </div>
+        </div>
+        <!-- Sección de gráficas -->
+        <div class="charts-section">
+          <div class="chart-container">
+            <h3><i class="fa fa-chart-bar"></i> Gráfica de Ventas</h3>
+            <app-sales-chart></app-sales-chart>
+          </div>
+          <div class="chart-container">
+            <h3><i class="fa fa-chart-line"></i> Gráfica de Ingresos</h3>
+            <app-revenue-chart></app-revenue-chart>
+          </div>
+        </div>
+      </div>
+      <div class="notifications-section">
+        <app-notifications></app-notifications>
+      </div>
+    </div>
+  </div>
+  

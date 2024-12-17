@@ -1,0 +1,30 @@
+<div class="sales-page">
+    <div class="sales-container">
+      <!-- Tabla de ventas -->
+      <table class="sales-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Nombre del Cliente</th>
+            <th>Fecha de Venta</th>
+            <th>Precio Unitario</th>
+            <th>Total</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sale of sales">
+            <td>{{ sale.productName }}</td>
+            <td>{{ sale.clientName }}</td>
+            <td>{{ sale.saleDate | date }}</td>
+            <td>{{ sale.unitPrice | currency }}</td>
+            <td>{{ sale.total | currency }}</td>
+            <td>
+              <button (click)="generateInvoice(sale)">Generar Factura</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

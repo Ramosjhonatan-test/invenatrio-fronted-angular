@@ -1,0 +1,107 @@
+<div class="ventas-section">
+  <h2>Gestión de Ventas</h2>
+  <button class="add-venta-btn" (click)="showAddVentaForm = !showAddVentaForm">
+    <i class='bx bxs-plus-circle'></i> Añadir Venta
+  </button>
+
+  <div *ngIf="showAddVentaForm" class="venta-form-overlay">
+    <div class="venta-form small-form">
+      <h3>Nueva Venta</h3>
+      <form (submit)="saveVenta()">
+        <div class="form-group">
+          <label for="cliente">Cliente:</label>
+          <select id="cliente" [(ngModel)]="newVenta.cliente_id" name="cliente_id" required>
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fecha">Fecha de Venta:</label>
+          <input type="datetime-local" id="fecha" [(ngModel)]="newVenta.fecha_hora" name="fecha_hora" required>
+        </div>
+
+        <div class="form-group">
+          <label for="producto">Producto:</label>
+          <select id="producto" [(ngModel)]="selectedProductoId" (change)="onProductoChange($event)" required>
+            <option *ngFor="let producto of productos" [value]="producto.id">{{ producto.nombre }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cantidadDisponible">Cantidad Disponible:</label>
+          <input type="number" id="cantidadDisponible" [(ngModel)]="cantidadDisponible" name="cantidadDisponible" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="cantidad">Cantidad a Vender:</label>
+          <input type="number" id="cantidad" [(ngModel)]="newVenta.cantidad" name="cantidad" (change)="updateTotal()" required>
+        </div>
+
+        <div class="form-group">
+          <label for="precio">Precio Unitario:</label>
+          <input type="number" id="precio" [(ngModel)]="newVenta.precio_unitario" name="precio_unitario" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="total">Total:</label>
+          <input type="number" id="total" [(ngModel)]="newVenta.total" name="total" readonly>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">
+            <i class='bx bxs-save'></i> Guardar Venta
+          </button>
+          <button type="button" (click)="resetForm()">
+            <i class='bx bxs-x-circle'></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <table class="ventas-table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Nombre del Cliente</th>
+        <th>Fecha de Venta</th>
+        <th>Precio Unitario</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venta of ventas">
+        <td>{{ getNombreProducto(venta.producto_id) }}</td>
+        <td>{{ getNombreCliente(venta.cliente_id) }}</td>
+        <td>{{ venta.fecha_hora }}</td>
+        <td>{{ venta.precio_unitario | currency }}</td>
+        <td>{{ venta.total | currency }}</td>
+        <td class="action-buttons">
+          <button (click)="deleteVenta(venta)">
+            <i class='bx bxs-trash'></i> Eliminar
+          </button>
+          <button (click)="generateReport(venta)">
+            <i class='bx bxs-file'></i> Generar Reporte
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Vista previa de la factura -->
+  <div *ngIf="selectedVenta" class="invoice-preview">
+    <h3>Vista Previa de la Factura</h3>
+    <div class="invoice-details">
+      <p><strong>Cliente:</strong> {{ getNombreCliente(selectedVenta.cliente_id) }}</p>
+      <p><strong>Producto:</strong> {{ getNombreProducto(selectedVenta.producto_id) }}</p>
+      <p><strong>Cantidad:</strong> {{ selectedVenta.cantidad }}</p>
+      <p><strong>Precio Unitario:</strong> {{ selectedVenta.precio_unitario | currency }}</p>
+      <p><strong>Total:</strong> {{ selectedVenta.total | currency }}</p>
+      <p><strong>Fecha y Hora:</strong> {{ selectedVenta.fecha_hora }}</p>
+    </div>
+    <button (click)="openInvoice()">
+      <i class='bx bx-download'></i> Abrir Factura
+    </button>
+  </div>
+  

@@ -1,0 +1,37 @@
+<div class="register-page">
+  <div class="register-container">
+    <div class="form-section">
+      <h2>Registro</h2>
+      <form (ngSubmit)="onRegister()">
+        <div class="form-group">
+          <label for="name"><i class="fa fa-user"></i> Nombre:</label>
+          <input type="text" id="name" [(ngModel)]="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email"><i class="fa fa-envelope"></i> Email:</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone"><i class="fa fa-phone"></i> Celular:</label>
+          <input type="text" id="phone" [(ngModel)]="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="password"><i class="fa fa-lock"></i> Password:</label>
+          <div class="password-container">
+            <input [type]="passwordVisible ? 'text' : 'password'" id="password" [(ngModel)]="password" name="password" required>
+            <button type="button" (click)="togglePasswordVisibility()">
+              <i [class]="passwordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+            </button>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit"><i class="fa fa-user-plus"></i> Registrarse</button>
+          <button type="button" class="login-button" (click)="navigateToLogin()"><i class="fa fa-sign-in"></i> Iniciar Sesión</button>
+        </div>
+      </form>
+    </div>
+    <div class="image-section">
+      <img src="assets/logo.png" alt="Imagen de fondo">
+    </div>
+  </div>
+</div>

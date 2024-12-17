@@ -1,0 +1,98 @@
+<div class="productos-section">
+    <h2>Gestión de Productos</h2>
+    <button class="add-product-btn" (click)="showAddProductForm = !showAddProductForm">
+      <i class='bx bxs-plus-circle'></i> Añadir Producto
+    </button>
+  
+    <div *ngIf="showAddProductForm" class="product-form-overlay">
+      <div class="product-form small-form">
+        <h3>{{ editingProduct ? 'Editar Producto' : 'Nuevo Producto' }}</h3>
+        <form (submit)="saveProduct()">
+          <div class="form-group">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" [(ngModel)]="newProduct.nombre" name="nombre" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" [(ngModel)]="newProduct.descripcion" name="descripcion" required></textarea>
+          </div>
+  
+          <div class="form-group">
+            <label for="price">Precio:</label>
+            <input type="number" id="price" [(ngModel)]="newProduct.precio" name="precio" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="quantity">Cantidad:</label>
+            <input type="number" id="quantity" [(ngModel)]="newProduct.cantidad" name="cantidad" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="category">Categoría:</label>
+            <select id="category" [(ngModel)]="newProduct.categoria" name="categoria" required>
+              <option value="Laptops">Laptops</option>
+              <option value="Computadoras">Computadoras</option>
+              <option value="Componentes">Componentes</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="provider">Proveedor:</label>
+            <select id="provider" [(ngModel)]="newProduct.proveedor_id" name="proveedor_id" required>
+              <option *ngFor="let proveedor of proveedores" [value]="proveedor.id">{{ proveedor.id }} - {{ proveedor.nombre }}</option>
+            </select>
+          </div>
+  
+          <div class="form-actions">
+            <button type="submit">
+              <i class='bx bxs-save'></i> {{ editingProduct ? 'Actualizar' : 'Guardar' }}
+            </button>
+            <button type="button" (click)="cancelEdit()">
+              <i class='bx bxs-x-circle'></i> Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar..." [(ngModel)]="searchQuery" />
+      <button (click)="buscarProductos()">
+        <i class='bx bxs-search'></i> Buscar
+      </button>
+    </div>
+  
+    <table class="products-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Categoría</th>
+          <th>Proveedor</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.nombre}}</td>
+          <td>{{product.descripcion}}</td>
+          <td>{{product.precio | currency:"Bs" }}</td>
+          <td>{{product.cantidad}}</td>
+          <td>{{product.categoria}}</td>
+          <td>{{product.proveedor_id}}</td>
+          <td class="action-buttons">
+            <button (click)="startEditProduct(product)">
+              <i class='bx bxs-edit'></i> Editar
+            </button>
+            <button (click)="deleteProduct(product)">
+              <i class='bx bxs-trash'></i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

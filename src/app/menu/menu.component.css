@@ -1,0 +1,139 @@
+/* Boxicons CSS */
+@import url('https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f9;
+}
+
+#sidebar {
+  width: 250px;
+  height: 97vh;
+  background: #e0e0e0; /* Color claro para el fondo del menú */
+  transition: width 300ms;
+  color: #333; /* Color del texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacio entre el menú superior e inferior */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave para la barra lateral */
+  border-radius: 15px; /* Bordes redondeados */
+}
+
+#sidebar.collapsed {
+  width: 80px; /* Ancho colapsado */
+}
+
+.collapse-btn {
+  background: none;
+  border: none;
+  color: #333; /* Color del botón de colapso */
+  font-size: 1.5em;
+  cursor: pointer;
+  margin: 10px;
+  align-self: flex-end;
+}
+
+#sidebar .brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px; /* Altura ajustada para el logo */
+  background: #e0e0e0; /* Color claro más oscuro */
+  font-size: 1.2em; /* Tamaño de fuente ajustado */
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para la sección de la marca */
+}
+
+#sidebar.collapsed .text {
+  display: none; /* Ocultar texto en estado colapsado */
+}
+
+#sidebar.collapsed .brand {
+  height: 80px; /* Altura ajustada para el logo colapsado */
+}
+
+#sidebar .brand .logo {
+  width: 80px; /* Tamaño del logo ajustado */
+  height: 80px;
+  border-radius: 50%; /* Logo circular */
+  margin-bottom: 10px;
+}
+
+#sidebar .side-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Permitir que el menú crezca */
+}
+
+#sidebar .side-menu.top {
+  flex-grow: 1; /* Asegurar que el menú superior tome el espacio restante */
+}
+
+#sidebar .side-menu.top li.active > a {
+  /*background: #b0bec5; /* Color de fondo para el elemento del menú activo */
+  color: #333;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+#sidebar .side-menu.top li a,
+#sidebar .side-menu.bottom li a { /* Estilo del botón de cerrar sesión igual que otros elementos */
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  color: #333;
+  font-size: 1em;
+  text-decoration: none;
+  transition: background 300ms, color 300ms;
+  border-radius: 5px; /* Bordes redondeados */
+  margin: 5px 10px; /* Espaciado entre los elementos del menú */
+}
+
+#sidebar .side-menu.top li a:hover,
+#sidebar .side-menu.bottom li a:hover {
+  background: #08a8ed; /* Color al pasar el cursor */
+  color: #000000;
+}
+
+#sidebar .side-menu.top li a i,
+#sidebar .side-menu.bottom li a i {
+  margin-right: 15px;
+  font-size: 1.5em; /* Iconos más grandes */
+}
+
+#sidebar.collapsed .side-menu li a {
+  justify-content: center; /* Centrar iconos en estado colapsado */
+}
+
+#sidebar.collapsed .side-menu li a i {
+  margin-right: 0; /* Eliminar margen para los iconos */
+}
+
+#sidebar .side-menu.bottom {
+  margin-bottom: 20px; /* Margen para la posición inferior */
+}
+
+.main-content {
+  flex-grow: 1; /* Permitir que el área de contenido crezca */
+  padding: 20px;
+  background: #ffffff; /* Color de fondo para el área de contenido */
+  min-height: 100vh; /* Asegurar que el área de contenido abarque toda la altura */
+  overflow-y: auto; /* Añadir desplazamiento vertical para el contenido */
+}

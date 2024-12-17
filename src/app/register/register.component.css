@@ -1,0 +1,139 @@
+/* Estilos generales para la página de registro */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('https://plus.unsplash.com/premium_photo-1686157758105-b100bd44945c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Estilos para el contenedor de registro */
+.register-container {
+  display: flex;
+  flex-direction: row-reverse; /* Imagen a la izquierda y formulario a la derecha */
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad para ver la imagen de fondo */
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Sección de imagen */
+.image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: 100%; /* Hacer que la imagen ocupe todo el espacio disponible */
+  border-radius: 15px 0 0 15px;
+}
+
+/* Sección de formulario */
+.form-section {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+  border-radius: 0 15px 15px 0;
+}
+
+.form-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group i {
+  margin-right: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.password-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-container input {
+  flex: 1;
+}
+
+.password-container button {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+}
+
+.password-container button:focus {
+  outline: none;
+}
+
+/* Grupo de botones */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button[type="submit"],
+.login-button {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #6b73ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button[type="submit"]:hover,
+.login-button:hover {
+  background: #000dff;
+}
+
+.login-button {
+  background: #ff6b6b;
+  border: 2px solid #ff6b6b;
+}
+
+.login-button:hover {
+  background: #ff0000;
+}

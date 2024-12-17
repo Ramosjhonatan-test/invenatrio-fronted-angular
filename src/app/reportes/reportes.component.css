@@ -1,0 +1,136 @@
+/* Estilos para el panel de reportes */
+.reportes-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Sección principal de reportes */
+  .main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Sección de gráficas y resumen */
+  .charts-and-summary {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Sección de resumen centrada */
+  .summary-section {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .summary-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .summary-cards .card {
+    background-color: #f8f9fa;
+    padding: 10px; /* Reducir padding */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-cards .card h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1em; /* Reducir tamaño de fuente */
+  }
+  
+  .summary-cards .card p {
+    font-size: 1.2em; /* Reducir tamaño de fuente */
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Sección de gráficas ajustadas */
+  .charts-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .chart-container {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 150px; /* Altura ajustada */
+  }
+  
+  .chart-container h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 1em; /* Reducir tamaño de fuente */
+    color: #333;
+  }
+  
+  .chart-container canvas {
+    width: 100%;
+    height: 100px; /* Altura ajustada */
+  }
+  
+  /* Sección de notificaciones a la derecha */
+  .notifications-section {
+    flex: 0 0 350px; /* Ajustar el ancho según tus necesidades */
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    background-color: #f8f9fa; /* Añadir color de fondo */
+    padding: 10px; /* Añadir padding */
+    border-radius: 8px; /* Añadir bordes redondeados */
+  }
+  
+  .notifications-section .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notifications-section .notification-item .icon-large {
+    font-size: 24px; /* Tamaño grande para los iconos */
+    margin-right: 10px;
+  }
+  
+  .notifications-section .notification-item.alert-red .fa {
+    color: #dc3545; /* Color rojo para el icono de alerta crítica */
+  }
+  
+  .notifications-section .notification-item.alert-yellow .fa {
+    color: #ffc107; /* Color amarillo para el icono de alerta de advertencia */
+  }
+  
+  .notifications-section .notification-item.critical {
+    color: #dc3545; /* Color rojo para texto crítico */
+    font-weight: bold;
+  }
+  
+  .notifications-section .notification-item.warning {
+    color: #ffc107; /* Color amarillo para texto de advertencia */
+    font-weight: bold;
+  }
+  
+  /* Iconos */
+  .fa-shopping-cart {
+    color: #28a745; /* Color para icono de ventas */
+  }
+  
+  .fa-dollar-sign {
+    color: #ffc107; /* Color para icono de ingresos */
+  }
+  
+  .fa-chart-bar, .fa-chart-line {
+    color: #007bff; /* Color para iconos de gráficas */
+  }
+  

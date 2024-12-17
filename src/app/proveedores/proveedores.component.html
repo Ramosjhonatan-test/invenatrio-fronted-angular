@@ -1,0 +1,77 @@
+<div class="proveedores-section">
+  <h2>Gestión de Proveedores</h2>
+  <button class="add-provider-btn" (click)="showAddProviderForm = !showAddProviderForm">
+    <i class='bx bxs-plus-circle'></i> Añadir Proveedor
+  </button>
+
+  <div *ngIf="showAddProviderForm" class="provider-form-overlay">
+    <div class="provider-form small-form">
+      <h3>{{ editingProvider ? 'Editar Proveedor' : 'Nuevo Proveedor' }}</h3>
+      <form (submit)="saveProvider()">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" [(ngModel)]="newProvider.nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-name">Nombre del Contacto:</label>
+          <input type="text" id="contact-name" [(ngModel)]="newProvider.contacto_nombre" name="contacto_nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-phone">Teléfono del Contacto:</label>
+          <input type="tel" id="contact-phone" [(ngModel)]="newProvider.contacto_celular" name="contacto_celular" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Correo Electrónico del Contacto:</label>
+          <input type="email" id="contact-email" [(ngModel)]="newProvider.contacto_correo" name="contacto_correo" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">
+            <i class='bx bxs-save'></i> {{ editingProvider ? 'Actualizar' : 'Guardar' }}
+          </button>
+          <button type="button" (click)="cancelEdit()">
+            <i class='bx bxs-x-circle'></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar..." [(ngModel)]="searchQuery" />
+    <button (click)="buscarProveedores()">
+      <i class='bx bxs-search'></i> Buscar
+    </button>
+  </div>
+
+  <table class="providers-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Nombre del Contacto</th>
+        <th>Teléfono del Contacto</th>
+        <th>Correo del Contacto</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let provider of providers">
+        <td>{{provider.nombre}}</td>
+        <td>{{provider.contacto_nombre}}</td>
+        <td>{{provider.contacto_celular}}</td>
+        <td>{{provider.contacto_correo}}</td>
+        <td class="action-buttons">
+          <button (click)="startEditProvider(provider)">
+            <i class='bx bxs-edit'></i> Editar
+          </button>
+          <button (click)="deleteProvider(provider)">
+            <i class='bx bxs-trash'></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

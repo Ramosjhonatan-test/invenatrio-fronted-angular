@@ -1,0 +1,40 @@
+<div class="configuracion-section">
+  <div class="sidebar">
+    <h2>BIENVENIDO: {{ usuario }}</h2>
+    <img src="assets/logo.png" alt="Logo de la Empresa" class="logo">
+  </div>
+
+  <div class="configuracion-form-container">
+    <h3>Configuración de la Empresa</h3>
+    <form (submit)="saveConfiguracion()">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="configuracion.nombre" name="nombre" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nit">NIT:</label>
+        <input type="text" id="nit" [(ngModel)]="configuracion.nit" name="nit" required>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" [(ngModel)]="configuracion.direccion" name="direccion" required>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" [(ngModel)]="configuracion.telefono" name="telefono" required>
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input type="email" id="correo" [(ngModel)]="configuracion.correo" name="correo" required>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit">MODIFICAR</button>
+      </div>
+    </form>
+  </div>
+</div>

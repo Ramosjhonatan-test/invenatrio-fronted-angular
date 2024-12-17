@@ -1,0 +1,58 @@
+<div id="menu-container">
+  <section id="sidebar" [class.collapsed]="isCollapsed">
+    <button class="collapse-btn" (click)="toggleCollapse()">&#9776;</button>
+    <a href="#" class="brand">
+      <img src="assets/logo.png" alt="Logo" class="logo">
+      <span class="text">Sistema Inventario</span>
+    </a>
+    <ul class="side-menu top">
+      <li>
+        <a routerLink="/menu/clientes" (click)="navigateTo('clientes')">
+          <i class='bx bxs-user'></i>
+          <span class="text">Clientes</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu/productos" (click)="navigateTo('productos')">
+          <i class='bx bxs-box'></i>
+          <span class="text">Produtos</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu/ventas" (click)="navigateTo('ventas')">
+          <i class='bx bxs-cart'></i>
+          <span class="text">Ventas</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu/proveedores" (click)="navigateTo('proveedores')">
+          <i class='bx bxs-truck'></i>
+          <span class="text">Proveedores</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu/reportes" (click)="navigateTo('reportes')">
+          <i class='bx bxs-bar-chart-alt-2'></i>
+          <span class="text">Reportes</span>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/menu/configuracion" (click)="navigateTo('configuracion')">
+          <i class='bx bxs-cog'></i>
+          <span class="text">Configuración</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="side-menu bottom">
+      <li>
+        <a href="#" class="logout" (click)="logout()">
+          <i class='bx bxs-log-out'></i>
+          <span class="text">Salir</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section id="main-content">
+    <router-outlet></router-outlet>
+  </section>
+</div>

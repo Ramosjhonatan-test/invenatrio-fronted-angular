@@ -1,0 +1,70 @@
+<div class="clientes-section">
+  <h2>Gestión de Clientes</h2>
+  <button class="add-client-btn" (click)="showAddClientForm = !showAddClientForm">
+    <i class='bx bxs-plus-circle'></i> Añadir Cliente
+  </button>
+
+  <div *ngIf="showAddClientForm" class="client-form-overlay">
+    <div class="client-form small-form">
+      <h3>{{ editingClient ? 'Editar Cliente' : 'Nuevo Cliente' }}</h3>
+      <form (submit)="saveClient()">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" [(ngModel)]="newClient.nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" [(ngModel)]="newClient.correo" name="correo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" [(ngModel)]="newClient.celular" name="celular" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">
+            <i class='bx bxs-save'></i> {{ editingClient ? 'Actualizar' : 'Guardar' }}
+          </button>
+          <button type="button" (click)="cancelEdit()">
+            <i class='bx bxs-x-circle'></i> Cancelar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar..." [(ngModel)]="searchQuery" />
+    <button (click)="buscarClientes()">
+      <i class='bx bxs-search'></i> Buscar
+    </button>
+  </div>
+
+  <table class="clients-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo Electrónico</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{client.nombre}}</td>
+        <td>{{client.correo}}</td>
+        <td>{{client.celular}}</td>
+        <td class="action-buttons">
+          <button (click)="startEditClient(client)">
+            <i class='bx bxs-edit'></i> Editar
+          </button>
+          <button (click)="deleteClient(client)">
+            <i class='bx bxs-trash'></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

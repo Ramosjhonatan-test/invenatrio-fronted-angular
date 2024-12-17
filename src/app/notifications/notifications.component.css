@@ -1,0 +1,65 @@
+/* Sección de notificaciones */
+.notifications-section {
+    flex: 0 0 300px; /* Ajustar el ancho según tus necesidades */
+    margin-left: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añadir sombra */
+    background-color: #f8f9fa; /* Añadir color de fondo */
+    padding: 10px; /* Añadir padding */
+    border-radius: 8px; /* Añadir bordes redondeados */
+  }
+  
+  .notification-content {
+    display: flex;
+    justify-content: space-between; /* Distribuir espacio entre los elementos */
+  }
+  
+  .notification-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notification-item .icon-large {
+    font-size: 26px; /* Tamaño grande para los iconos */
+    margin-right: 10px;
+  }
+  
+  .notification-item.alert-red .fa {
+    color: #dc3545; /* Color rojo para el icono de alerta crítica */
+  }
+  
+  .notification-item.alert-yellow .fa {
+    color: #ffc107; /* Color amarillo para el icono de alerta de advertencia */
+  }
+  
+  .notification-item.critical {
+    color: #dc3545; /* Color rojo para texto crítico */
+    font-weight: bold;
+  }
+  
+  .notification-item.warning {
+    color: #ffc107; /* Color amarillo para texto de advertencia */
+    font-weight: bold;
+  }
+  
+  .producto-nombre {
+    flex: 1; /* Flex para ajustar el nombre del producto */
+  }
+  
+  .producto-cantidad {
+    flex: 0 0 80px; /* Ancho fijo para la cantidad de stock */
+    text-align: right; /* Alinear texto a la derecha */
+  }
+  
+  /* Iconos */
+  .fa-shopping-cart {
+    color: #28a745; /* Color para icono de ventas */
+  }
+  
+  .fa-dollar-sign {
+    color: #ffc107; /* Color para icono de ingresos */
+  }
+  
+  .fa-chart-bar, .fa-chart-line {
+    color: #007bff; /* Color para iconos de gráficas */
+  }
+  

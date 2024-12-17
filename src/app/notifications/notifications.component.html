@@ -1,0 +1,20 @@
+<div class="notifications-section">
+    <h2>Notificaciones</h2>
+    <ul>
+      <li *ngFor="let producto of productosBajoStock" 
+          class="notification-item" 
+          [ngClass]="{'alert-red': producto.cantidad < 10, 'alert-yellow': producto.cantidad >= 10 && producto.cantidad < 50}">
+        <span class="notification-content">
+          <span class="producto-nombre">
+            <i *ngIf="producto.cantidad < 10" class="fa fa-exclamation-triangle icon-large"></i>
+            <i *ngIf="producto.cantidad >= 10 && producto.cantidad < 50" class="fa fa-exclamation-circle icon-large"></i>
+            {{ producto.nombre }}
+          </span>
+          <span class="producto-cantidad">
+            Stock: {{ producto.cantidad }}
+          </span>
+        </span>
+      </li>
+    </ul>
+  </div>
+  
